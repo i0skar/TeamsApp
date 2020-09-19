@@ -1,0 +1,25 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'npm install'
+
+- script: |
+    npm run build
+  displayName: 'npm build'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '/home/vsts/work/1/s/dist'
+    ArtifactName: 'build'
+  condition: succeededOrFailed()

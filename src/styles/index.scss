@@ -1,0 +1,14 @@
+@import './reset.scss';
+@import './mixins.scss';
+
+body {
+  font-family: $fontPrimary;
+  color: $white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background: $surface;
+}
+
+#root {
+  min-height: 100vh;
+}

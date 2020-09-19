@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": false,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "jsx": "react",
+    "lib": ["dom", "es2017"],
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "consts": ["src/consts"],
+      "components/*": ["src/components/*"],
+      "shared/*": ["src/shared/*"],
+      "ui": ["src/ui"],
+      "modules": ["src/modules"],
+      "utils": ["src/utils"],
+      "core/*": ["src/core/*"],
+      "mocks": ["src/mocks"],
+      "services*": ["src/services/*"],
+      "styles": ["src/styles"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "configFile": "../tslint.json"
+      }
+    ]
+  },
+  "include": ["src", "typings", "config/setup.jest.ts"],
+  "exclude": ["node_modules", "**/*.test.ts"]
+}
