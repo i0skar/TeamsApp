@@ -1,0 +1,31 @@
+@import 'styles/mixins';
+
+.createUserForm {
+  @include col;
+  margin: 30px;
+  width: 33%;
+  height: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 3px dotted #003577;
+
+  .createUserFormHeader {
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    @include row;
+    margin: 6px 0 96px 0;
+
+    a {
+      @include labelSmall;
+      color: $primary;
+      margin-left: auto;
+    }
+  }
+
+  & > button {
+    align-self: center;
+    width: 208px;
+  }
+}
