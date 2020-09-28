@@ -105,15 +105,6 @@ const CreateUserForm = ({ onSubmit }: CreateUserForm.Props) => {
             </Select>
           </FormControl>
 
-          {/* <InputField
-            data-idx={ROLE}
-            label={`${BASE_CONFIG[ROLE].label}`}
-            placeholder={`${BASE_CONFIG[ROLE].label}...`}
-            error={dirty ? fields[ROLE].error : ''}
-            value={fields[ROLE].value}
-            onChange={change}
-          /> */}
-
           <FormControl className={classes.formControl} variant="filled">
             <InputLabel className={classes.label} id="demo-simple-select-filled-label">
               Skill
@@ -131,15 +122,6 @@ const CreateUserForm = ({ onSubmit }: CreateUserForm.Props) => {
               <MenuItem value={5}>5</MenuItem>
             </Select>
           </FormControl>
-
-          {/* <InputField
-            data-idx={SKILL}
-            label={`${BASE_CONFIG[SKILL].label}`}
-            placeholder={`${BASE_CONFIG[SKILL].label}...`}
-            error={dirty ? fields[SKILL].error : ''}
-            value={fields[SKILL].value}
-            onChange={change}
-          /> */}
 
           <Button className={classes.button} type="submit" disabled={dirty && invalid}>
             Submit
