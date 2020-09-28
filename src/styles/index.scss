@@ -12,3 +12,13 @@ body {
 #root {
   min-height: 100vh;
 }
+
+#demo-simple-select-filled {
+  color: #3381e1;
+  font-family: 'Montserrat';
+  font-size: 15px;
+}
+
+.MuiSvgIcon-root.MuiSelect-icon.MuiSelect-iconFilled {
+  color: #3381e1;
+}

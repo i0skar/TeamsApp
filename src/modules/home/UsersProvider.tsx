@@ -49,7 +49,6 @@ class Provider extends React.Component<UserProvider.Props, typeof STATE> {
   }
 
   handleCreateUser = (user: string) => {
-    console.log(user);
     this._saveUserToLocalStorage(JSON.stringify(user));
     this._getUsersFromLocalStorage();
   };
@@ -57,8 +56,8 @@ class Provider extends React.Component<UserProvider.Props, typeof STATE> {
   generateTeam = () => {
     const teamTactic = {
       Goalkeeper: 1,
-      Defender: 5,
-      Midfielder: 3,
+      Defender: 4,
+      Midfielder: 4,
       Forward: 2
     };
 
@@ -66,17 +65,17 @@ class Provider extends React.Component<UserProvider.Props, typeof STATE> {
 
     this.state.users.sort(() => 0.5 - Math.random());
 
-    let skill = 3;
+    const skill = 4;
 
     Object.keys(teamTactic).forEach((role) => {
       generatedTeam.push(
         ...this.state.users
-          .filter((user) => user.role === role && +user.skill === skill)
+          .filter(
+            (user) => user.role === role && (+user.skill === skill || +user.skill === skill + 1)
+          )
           .slice(0, teamTactic[role])
       );
     });
-
-    console.log(generatedTeam);
 
     this.setState({ ...STATE, users: generatedTeam });
   };
@@ -104,28 +103,3 @@ export const useUsersProvider = () => {
 };
 
 export default UsersProvider;
-
-// const teamTactics = {
-//   '4-4-2': {
-//     goalkeeper: 1,
-//     defender: 4,
-//     midfielder: 4,
-//     forward: 2
-//   },
-//   '4-5-1': {
-//     goalkeeper: 1,
-//     defender: 4,
-//     midfielder: 5,
-//     forward: 1
-//   }
-// };
-
-// const team = this.state.users.filter((user) => user.role === 'Forward').slice(0, teamTactic.Forward);
-
-// GoalkeeperIlosc = 1;
-// get(GoalkeepereWszyscy).get(GoalkeeperIlosc).randomowyGoalkeeper.
-// dodajdoFajnyTeam();
-
-// const team = this.state.users.filter((user) => user.name === 'Oskar');
-
-// const team = this.state.users.sort(() => 0.5 - Math.random()).slice(0, teamSize);

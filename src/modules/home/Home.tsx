@@ -45,11 +45,6 @@ const Home = () => {
                 {skill.value}
               </Button>
             ))}
-            {/* <Button className={csx.buttonSkill}>1</Button>
-            <Button className={csx.buttonSkill}>2</Button>
-            <Button className={csx.buttonSkill}>3</Button>
-            <Button className={csx.buttonSkill}>4</Button>
-            <Button className={csx.buttonSkill}>5</Button> */}
           </div>
           <Button className={csx.button} onClick={() => generateTeam(selectedSkill)}>
             Generate Team

@@ -7,7 +7,7 @@ import React from 'react';
 
 import { Button, InputField } from 'ui';
 
-import { Form, V } from 'utils';
+import { Form } from 'utils';
 
 import csx from './CreateUserForm.scss';
 
@@ -23,13 +23,17 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
       minWidth: 120,
-      backgroundColor: '#0f183e'
+      backgroundColor: '#0f183e7d'
     },
     selectEmpty: {
       marginTop: theme.spacing(2)
     },
     label: {
-      color: '#3381e1'
+      color: '#3381e1',
+      fontSize: '14px',
+      fontWeight: 400,
+      fontFamily: 'Montserrat',
+      marginLeft: '9px'
     },
     button: {
       marginTop: theme.spacing(),
@@ -37,12 +41,6 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   })
 );
-
-// const BASE_CONFIG: Form.Config = [
-//   { label: 'Name', fns: [V.req] },
-//   { label: 'Role', fns: [V.req] },
-//   { label: 'Skill', fns: [V.req] }
-// ];
 
 const BASE_CONFIG: Form.Config = [{ label: 'Name' }, { label: 'Role' }, { label: 'Skill' }];
 
@@ -81,8 +79,8 @@ const CreateUserForm = ({ onSubmit }: CreateUserForm.Props) => {
         <form className={csx.form} onSubmit={handleSubmit}>
           <InputField
             data-idx={NAME}
-            label={`${BASE_CONFIG[NAME].label}`}
-            placeholder={`${BASE_CONFIG[NAME].label}...`}
+            label={``}
+            placeholder={`${BASE_CONFIG[NAME].label}`}
             error={dirty ? fields[NAME].error : ''}
             value={fields[NAME].value}
             onChange={change}

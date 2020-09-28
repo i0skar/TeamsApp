@@ -3,13 +3,13 @@
   display: grid;
   grid-template-columns: 30fr 60fr;
   grid-template-rows: 50fr 40fr;
+  height: 900px;
 }
 
 .generate {
   display: flex;
   flex-flow: column;
   margin: 30px;
-  margin-top: 0px;
   padding: 20px;
   border-radius: 20px;
   border: 3px dotted #003577;
@@ -24,13 +24,13 @@
 
   .buttonTactic {
     width: 30%;
-    margin: 5px;
+    margin: 10px 5px;
     height: 30px;
   }
 
   .buttonSkill {
     width: 10px;
     height: 10px;
-    margin: 5px;
+    margin: 10px 5px;
   }
 }
